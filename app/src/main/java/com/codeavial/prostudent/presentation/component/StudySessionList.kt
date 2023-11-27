@@ -48,11 +48,11 @@ fun LazyListScope.studySessionsList(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
-                    modifier = Modifier.size(120.dp),
-                    painter = painterResource(R.drawable.imagerecent),
+                    modifier = Modifier.size(180.dp),
+                    painter = painterResource(R.drawable.image_recent_two),
                     contentDescription = emptyListText
                 )
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(2.dp))
                 Text(
                     text = emptyListText,
                     style = MaterialTheme.typography.bodySmall,
@@ -63,11 +63,11 @@ fun LazyListScope.studySessionsList(
         }
     }
     items(sessions) { session ->
-        /*StudySessionCard(
+        StudySessionCard(
             modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
             session = session,
             onDeleteIconClick = { onDeleteIconClick(session) }
-        )*/
+        )
     }
 }
 

@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.codeavial.prostudent.domain.model.Subject
 
@@ -82,9 +83,9 @@ fun AddSubjectDialog(
                                     .size(24.dp)
                                     .clip(CircleShape)
                                     .border(
-                                        width = 1.dp,
+                                        width = 1.dp ,
                                         color = if (colors == selectedColors) Color.Black
-                                        else Color.Transparent,
+                                        else Color.Transparent ,
                                         shape = CircleShape
                                     )
                                     .background(brush = Brush.verticalGradient(colors))
@@ -127,4 +128,22 @@ fun AddSubjectDialog(
             }
         )
     }
+}
+
+@Preview
+@Composable
+fun Previ() {
+    AddSubjectDialog(
+        isOpen = true ,
+        selectedColors = emptyList() ,
+        subjectName =  "Subject name",
+        goalHours = "2" ,
+        onColorChange =  {},
+        onSubjectNameChange =  {},
+        onGoalHoursChange =  {},
+        onDismissRequest = { /*TODO*/ }) {
+        
+    }
+
+
 }
