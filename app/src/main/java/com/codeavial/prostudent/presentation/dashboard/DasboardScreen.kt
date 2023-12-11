@@ -230,7 +230,7 @@ private fun DashboardScreenTopBar() {
     CenterAlignedTopAppBar(
         title = {
             Text(
-                text = "StudySmart",
+                text = "ProStudent",
                 style = MaterialTheme.typography.headlineMedium
             )
         }
