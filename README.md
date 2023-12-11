@@ -1,4 +1,4 @@
-**Introducing "ProStudent"** – the ultimate companion for students seeking to streamline and enhance their study routines. This cutting-edge Android app, meticulously crafted using Jetpack Compose, Room, Dagger Hilt, ViewModel, Coroutines, and Clean Architecture principles, redefines the way students organize and manage their academic pursuits.
+******Introducing "ProStudent"****** – the ultimate companion for students seeking to streamline and enhance their study routines. This cutting-edge Android app, meticulously crafted using Jetpack Compose, Room, Dagger Hilt, ViewModel, Coroutines, and Clean Architecture principles, redefines the way students organize and manage their academic pursuits.
 
 
 **Key Concepts:**
