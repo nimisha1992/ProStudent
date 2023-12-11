@@ -1,6 +1,7 @@
 package com.codeavial.prostudent.util
 
 
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.ui.graphics.Color
 import com.codeavial.prostudent.presentation.theme.Green
 import com.codeavial.prostudent.presentation.theme.Orange
@@ -29,4 +30,22 @@ fun Long?.changeMillisToDateString(): String {
             .toLocalDate()
     } ?: LocalDate.now()
     return date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))
+}
+
+fun Long.toHours(): Float {
+    val hours = this.toFloat() / 3600f
+    return "%.2f".format(hours).toFloat()
+}
+
+sealed class SnackbarEvent {
+    data class ShowSnackbar(
+        val message: String,
+        val duration: SnackbarDuration = SnackbarDuration.Short
+    ) : SnackbarEvent()
+
+    data object NavigateUp: SnackbarEvent()
+}
+
+fun Int.pad(): String {
+    return this.toString().padStart(length = 2, padChar = '0')
 }

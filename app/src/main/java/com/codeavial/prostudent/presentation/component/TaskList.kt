@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import com.codeavial.prostudent.R
 import com.codeavial.prostudent.domain.model.Task
 import com.codeavial.prostudent.util.Priority
+import com.codeavial.prostudent.util.changeMillisToDateString
 
 fun LazyListScope.tasksList(
     sectionTitle: String ,
@@ -49,8 +50,8 @@ fun LazyListScope.tasksList(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
-                    modifier = Modifier.size(120.dp),
-                    painter = painterResource(R.drawable.imageupcoming),
+                    modifier = Modifier.size(180.dp),
+                    painter = painterResource(R.drawable.imagerecent),
                     contentDescription = emptyListText
                 )
                 Spacer(modifier = Modifier.height(12.dp))
@@ -107,7 +108,7 @@ private fun TaskCard(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "${task.dueDate}",
+                    text = task.dueDate.changeMillisToDateString(),
                     style = MaterialTheme.typography.bodySmall
                 )
             }

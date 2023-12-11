@@ -27,11 +27,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.codeavial.prostudent.R
 import com.codeavial.prostudent.domain.model.Session
+import com.codeavial.prostudent.util.changeMillisToDateString
+import com.codeavial.prostudent.util.toHours
 
 fun LazyListScope.studySessionsList(
-    sectionTitle: String ,
-    emptyListText: String ,
-    sessions: List<Session> ,
+    sectionTitle: String,
+    emptyListText: String,
+    sessions: List<Session>,
     onDeleteIconClick: (Session) -> Unit
 ) {
     item {
@@ -48,11 +50,11 @@ fun LazyListScope.studySessionsList(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
-                    modifier = Modifier.size(180.dp),
+                    modifier = Modifier.size(120.dp),
                     painter = painterResource(R.drawable.image_recent_two),
                     contentDescription = emptyListText
                 )
-                Spacer(modifier = Modifier.height(2.dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 Text(
                     text = emptyListText,
                     style = MaterialTheme.typography.bodySmall,
@@ -73,8 +75,8 @@ fun LazyListScope.studySessionsList(
 
 @Composable
 private fun StudySessionCard(
-    modifier: Modifier = Modifier ,
-    session: Session ,
+    modifier: Modifier = Modifier,
+    session: Session,
     onDeleteIconClick: () -> Unit
 ) {
     Card(
@@ -94,13 +96,13 @@ private fun StudySessionCard(
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = "${session.date}",
+                    text = session.date.changeMillisToDateString( ),
                     style = MaterialTheme.typography.bodySmall
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                text = "${session.duration} hr",
+                text = "${session.duration.toHours()} hr",
                 style = MaterialTheme.typography.titleMedium
             )
             IconButton(onClick = onDeleteIconClick) {
